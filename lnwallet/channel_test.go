@@ -59,7 +59,7 @@ func assertOutputExistsByValue(t *testing.T, commitTx *wire.MsgTx,
 }
 
 // testAddSettleWorkflow tests a simple channel scenario where Alice and Bob
-// add, the settle an HTLC between themselves.
+// add, then settle an HTLC between themselves.
 func testAddSettleWorkflow(t *testing.T, tweakless bool,
 	chanTypeModifier channeldb.ChannelType,
 	storeFinalHtlcResolutions bool) {

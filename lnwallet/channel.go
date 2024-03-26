@@ -4154,7 +4154,7 @@ type NewCommitState struct {
 // The first return parameter is the signature for the commitment transaction
 // itself, while the second parameter is a slice of all HTLC signatures (if
 // any). The HTLC signatures are sorted according to the BIP 69 order of the
-// HTLC's on the commitment transaction. Finally, the new set of pending HTLCs
+// HTLCs on the commitment transaction. Finally, the new set of pending HTLCs
 // for the remote party's commitment are also returned.
 func (lc *LightningChannel) SignNextCommitment() (*NewCommitState, error) {
 	lc.Lock()
@@ -5922,7 +5922,7 @@ func (lc *LightningChannel) InitNextRevocation(revKey *btcec.PublicKey) error {
 // The additional openKey argument corresponds to the incoming CircuitKey of the
 // committed circuit for this HTLC. This value should never be nil.
 //
-// NOTE: It is okay for sourceRef to be nil when unit testing the wallet.
+// NOTE: It is okay for openKey to be nil when unit testing the wallet.
 func (lc *LightningChannel) AddHTLC(htlc *lnwire.UpdateAddHTLC,
 	openKey *models.CircuitKey) (uint64, error) {
 
@@ -5937,7 +5937,7 @@ func (lc *LightningChannel) AddHTLC(htlc *lnwire.UpdateAddHTLC,
 // The additional openKey argument corresponds to the incoming CircuitKey of the
 // committed circuit for this HTLC. This value should never be nil.
 //
-// NOTE: It is okay for sourceRef to be nil when unit testing the wallet.
+// NOTE: It is okay for openKey to be nil when unit testing the wallet.
 func (lc *LightningChannel) addHTLC(htlc *lnwire.UpdateAddHTLC,
 	openKey *models.CircuitKey, buffer BufferType) (uint64, error) {
 

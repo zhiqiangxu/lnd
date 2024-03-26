@@ -2488,7 +2488,7 @@ type CommitDiff struct {
 	// CommitSig is the exact CommitSig message that should be sent after
 	// the set of LogUpdates above has been retransmitted. The signatures
 	// within this message should properly cover the new commitment state
-	// and also the HTLC's within the new commitment state.
+	// and also the HTLCs within the new commitment state.
 	CommitSig *lnwire.CommitSig
 
 	// OpenedCircuitKeys is a set of unique identifiers for any downstream
